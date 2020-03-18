@@ -6,7 +6,7 @@
 :source-highlighter: pygments
 :pygments-linenums-mode: inline
 
-mailto:{my_email}[{my_name}]
+Feel free to contact me: mailto:{my_email}[{my_name}].
 
 == Issue
 
@@ -20,7 +20,7 @@ image::rotation_info.png[width=85%]
 
 == R script
 
-Download this whole repository. It has some example netCDF files of different variables and domains to prove its consistency, please let me know if it does not work for some CORDEX files. Feel free to improve it. 
+Download this whole repository. It has some example netCDF files of different variables and domains to prove its consistency, please let me know if it does not work for some CORDEX files.
 
 To start playing with it open the _CORDEX_plot.R_ file, add a line after the libraries (install them first) with something like this to where you downloaded this repository.
 
@@ -29,4 +29,6 @@ To start playing with it open the _CORDEX_plot.R_ file, add a line after the lib
 setwd("/path/to/git/repo")
 ----
 
-And then run the script. The images should be rendered on the folder _plots/_. I recommend you to not only run it but also play with it, grasp what its written there, be curious. Note that only the first time step is being plotted. For this script I used the info from https://github.com/r-spatial/sf/issues/651[here] for the coordinate transformation.
+And then run the script. The images should be rendered on the folder _plots/_. I recommend you to not only run it but also play with it, grasp what its written there, be curious. Note that only the first time step is being plotted. It is also quite basic, go ahead and improve it (please share it). 
+
+For this script I used info from https://github.com/r-spatial/sf/issues/651[here] for the coordinate transformation.
