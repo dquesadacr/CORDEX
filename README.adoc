@@ -31,4 +31,4 @@ setwd("/path/to/git/repo")
 
 And then run the script. The images should be rendered on the folder _plots/_. I recommend you to not only run it but also play with it, grasp what its written there, be curious. Note that only the first time step is being plotted. It is also quite basic, go ahead and improve it (please share it). 
 
-For this script I used info from https://github.com/r-spatial/sf/issues/651[here] for the coordinate transformation.
+For this script I used info from https://github.com/r-spatial/sf/issues/651[here] for the coordinate transformation and https://stackoverflow.com/questions/33227182/how-to-set-use-ggplot2-to-map-a-raster[this] for plotting rasters in ggplot2.
