@@ -15,7 +15,7 @@ library(maps)
 nc.files<- list.files(path = "./nc_files/", pattern = ".nc$")
 
 # Loop on the files and save plots of the first layer
-x<- nc.files[1]
+
 sapply(nc.files, function(x){
   
   # This applies to CORDEX data nomenclature, where the variable name is at the beginning of the name
