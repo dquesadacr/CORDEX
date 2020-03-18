@@ -6,11 +6,11 @@
 :source-highlighter: pygments
 :pygments-linenums-mode: inline
 
-Feel free to contact me: mailto:{my_email}[{my_name}].
+This was written to help students from the Hydroscience and Engineering Master's degree at TU Dresden with their theses, but would be glad if it reaches someone else who needs it. Feel free to contact me: mailto:{my_email}[{my_name}].
 
 == Issue
 
-The issue about plotting these RCMs files is the rotation embedded in them, and the unclear documentation towards it and how to visualize it in *_R_*.
+The issue about plotting these RCMs files is the rotation embedded in them and how to visualize it with *_R_*.
 
 https://cordex.org/wp-content/uploads/2012/11/CORDEX-domain-description_231015.pdf[Here] you can find the CORDEX domain description, with the visualization of how it should look like. There is an error, or simply not updated, in the case of Central America (CAM), where it states that the amount of pixels in y (Ny) is 113, but in the files you will find 139. Please check for the other regions of interest. 
 
@@ -22,7 +22,7 @@ image::rotation_info.png[width=85%]
 
 Download this whole repository. It has some example netCDF files of different variables and domains to prove its consistency, please let me know if it does not work for some CORDEX files.
 
-To start playing with it open the _CORDEX_plot.R_ file, add a line after the libraries (install them first) with something like this to where you downloaded this repository.
+To start playing with it open the _CORDEX_plot.R_ file, add a line after the libraries (install them first) with something like this to where you downloaded this repository (if the working directory is not properly set when opening the file).
 
 [source, r]
 ----
