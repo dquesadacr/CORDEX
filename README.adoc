@@ -1,0 +1,32 @@
+= Plotting CORDEX files
+:imagesdir: ./images
+:icons: font
+:my_name: Dánnell Quesada
+:my_email: dannell.quesada@tu-dresden.de
+:source-highlighter: pygments
+:pygments-linenums-mode: inline
+
+mailto:{my_email}[{my_name}]
+
+== Issue
+
+The issue about plotting these RCMs files is the rotation embedded in them, and the unclear documentation towards it and how to visualize it in *_R_*.
+
+https://cordex.org/wp-content/uploads/2012/11/CORDEX-domain-description_231015.pdf[Here] you can find the CORDEX domain description, with the visualization of how it should look like. There is an error, or simply not updated, in the case of Central America (CAM), where it states that the amount of pixels in y (Ny) is 113, but in the files you will find 139. Please check for the other regions of interest. 
+
+In the following table, you can find the summarised info about the rotation for all the domains. It is found https://is-enes-data.github.io/cordex_archive_specifications.pdf[here], page 10.
+
+image::rotation_info.png[width=85%]
+
+== R script
+
+Download this whole repository. It has some example netCDF files of different variables and domains to prove its consistency, please let me know if it does not work for some CORDEX files. Feel free to improve it. 
+
+To start playing with it open the _CORDEX_plot.R_ file, add a line after the libraries (install them first) with something like this to where you downloaded this repository.
+
+[source, r]
+----
+setwd("/path/to/git/repo")
+----
+
+And then run the script. The images should be rendered on the folder _plots/_. I recommend you to not only run it but also play with it, grasp what its written there, be curious. Note that only the first time step is being plotted. For this script I used the info from https://github.com/r-spatial/sf/issues/651[here] for the coordinate transformation.
