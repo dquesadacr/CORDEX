@@ -29,8 +29,8 @@ sapply(nc.files, function(x){
   long.name<- unlist(str_split(attr(GI, "mdata")[grep("long_name", attr(GI, "mdata"), ignore.case = T)][
     str_which(attr(GI, "mdata")[grep("long_name", attr(GI, "mdata"), ignore.case = T)], nc.var)], "="))[2]
   
-  units<- unlist(str_split(attr(GI, "mdata")[grep("units", attr(GI, "mdata"), ignore.case = T)][
-    str_which(attr(GI, "mdata")[grep("units", attr(GI, "mdata"), ignore.case = T)], nc.var)], "="))[2]
+  units<- unlist(str_split(attr(GI, "mdata")[grep("#units", attr(GI, "mdata"), ignore.case = T)][
+    str_which(attr(GI, "mdata")[grep("#units", attr(GI, "mdata"), ignore.case = T)], nc.var)], "="))[2]
   
   coord<- sapply(rot.info, FUN = function(x) {
     unlist(str_split(x, pattern = "="))[2]})
@@ -43,7 +43,7 @@ sapply(nc.files, function(x){
                        coord.num[2], " +o_lat_p=", coord.num[1], 
                        " +lon_0=180 +to_meter=0.0174532925199433")
   
-  nc.stack<- raster::stack(paste0("./nc_files/", x))
+  nc.stack<- raster::stack(paste0("./nc_files/", x), varname= nc.var)
   crs(nc.stack)<- st_crs(4326)$proj4string
   
   # Just the first timestep for test, reprojecting the whole stack takes some time
@@ -73,5 +73,5 @@ sapply(nc.files, function(x){
           plot.title = element_text(hjust = 0.5))
     
   ggsave(plot = to.plot, filename = paste0("plots/", str_remove(x, ".nc"), "_first.png"),
-         height = 100, width = 150, units = "mm", dpi = 600, device = "png") 
+         height = 100, width = 150, units = "mm", dpi = 500, device = "png") 
 })
